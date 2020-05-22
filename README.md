@@ -1,5 +1,7 @@
 # pagseguro-node
-Biblioteca de integração PagSeguro UOL com checkout transparente para Node.js
+Biblioteca de integração PagSeguro UOL com checkout transparente para Node.js.
+
+Baseado no original [https://github.com/wcustodio/pagseguro-node](wcustodio/pagseguro-node), com a adição do método de pagamento Débito Online.
 
 ## Instalação
 `npm install node-pagseguro`
@@ -103,6 +105,7 @@ payment.sendTransaction({
    value: Number,
    installments: Number, //opcional, padrão 1
    hash: String //senderHash gerado pela biblioteca do PagSeguro
+   bankName: String, // Obrigatório para o método eft, exemplo: 'itau'
 }, function(err, data) {
 
 });
